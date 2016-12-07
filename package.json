@@ -1,0 +1,26 @@
+{
+  "name": "retrace-sales-app",
+  "version": "1.0.0",
+  "description": "sales app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cynhw/retrace-sales-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cynhw/retrace-sales-app/issues"
+  },
+  "homepage": "https://github.com/cynhw/retrace-sales-app#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "method-override": "^2.3.7",
+    "mongoose": "^4.7.0",
+    "morgan": "^1.7.0"
+  }
+}
