@@ -1,0 +1,59 @@
+<div class="row">
+	<div class="large-12 medium-12 small-12 columns opportunity-header">
+		<h1>Matches</h1>
+	</div>
+</div>
+
+<div class="row">
+	<div class="large-6 columns matches-content">
+		
+		<ul ng-repeat="match in matched | filter: {type: 'Seller'}">
+			<li id="seller-list-header">{{ match.type }}</li>
+			<li>{{ match.manufacturer }}</li>
+			<li>{{ match.model }}</li>
+			<li>{{ match.storage }}</li>
+			<li>{{ match.color }}</li>
+			<li>{{ match.quantity }}</li>
+			<li>${{ match.price }}</li>
+			<li>{{ match.country }}</li>
+		</ul>	
+		<ul ng-repeat="match in matched | filter: {type: 'Seller'}">
+			<li id="seller-list-header">{{ match.type }}</li>
+			<li>{{ match.manufacturer }}</li>
+			<li>{{ match.model }}</li>
+			<li>{{ match.storage }}</li>
+			<li>{{ match.color }}</li>
+			<li>{{ match.quantity }}</li>
+			<li>${{ match.price }}</li>
+			<li>{{ match.country }}</li>
+		</ul>
+	
+	</div>
+
+	<div class="large-6 columns matches-content">
+
+		<ul ng-repeat="match in matched | filter: { type: 'Buyer' }">
+			<li id="buyer-list-header">{{ match.type }}</li>
+			<li>{{ match.manufacturer }}</li>
+			<li>{{ match.model }}</li>
+			<li>{{ match.storage }}</li>
+			<li>{{ match.color }}</li>
+			<li>{{ match.quantity }}</li>
+			<li>${{ match.price }}</li>
+			<li>{{ match.country }}</li>
+		</ul>	
+
+		<ul ng-repeat="match in matched | filter: { type: 'Buyer' }">
+			<li id="buyer-list-header">{{ match.type }}</li>
+			<li>{{ match.manufacturer }}</li>
+			<li>{{ match.model }}</li>
+			<li>{{ match.storage }}</li>
+			<li>{{ match.color }}</li>
+			<li>{{ match.quantity }}</li>
+			<li>${{ match.price }}</li>
+			<li>{{ match.country }}</li>
+		</ul>	
+
+	</div>
+
+</div>

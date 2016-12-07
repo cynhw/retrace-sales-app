@@ -1,0 +1,128 @@
+/* Universal HTML Styling */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Universal Body Styling */
+
+body {
+	font-family: 'Lato';
+	font-size: 14px;
+}
+
+a:link, a:visited {
+	color: black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Avenir Next';
+	letter-spacing: -1px;
+	line-height: 2em;
+	font-weight: 500;
+}
+
+li {
+	list-style-type: none;
+	display: inline-block;
+	margin: 10px;
+}
+
+table, thead, tr, th {
+	background-color: transparent;
+}
+
+/* Nav List Link Styles */
+
+.nav li, .menu-text{
+	font-size: 14px;
+}
+
+.dropdown {
+	background-color: transparent;
+}
+
+/* Form Styling */
+
+label {
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 1px;
+	line-height: 30px;
+}
+
+#opp-form h5 {
+	color: deepskyblue;
+}
+
+.opp-input {
+	border-radius: 5px;
+}
+
+.opp-button, .opp-button:hover {
+	border-radius: 5px;
+	background-color: transparent;
+	border: 1px solid lightgrey;
+	margin: 20px 0;
+	color: deepskyblue;
+}
+
+/* Styling for Opportunity */
+
+.opportunity-header {
+	margin: 30px 0;
+}
+
+.active {
+	border-bottom: 2px solid #000;
+	color: deepskyblue;
+	font-weight: 900;
+}
+
+.filter-btn, .filter-btn:hover {
+	width: 10em;
+	background-color: transparent;
+	color: #000;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 500;
+	font-size: 10px;
+}
+
+.filter-btn:hover {
+	color: orange;
+}
+
+.menu a {
+	font-size: 5px;
+	font-weight: 500;
+}
+
+/* Matches Content */
+
+.matches-content li {
+	margin: 0 10px;
+}
+
+#seller-list-header {
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 1px;
+	padding: 2px 5px;
+	background-color: #1db7c8;
+	border-radius: 5px;
+	color: #FFF;
+}
+
+#buyer-list-header {
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 1px;
+	padding: 2px 5px;
+	background-color: #f26e59;
+	border-radius: 5px;
+	color: #FFF;
+}

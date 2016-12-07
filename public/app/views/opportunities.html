@@ -1,0 +1,60 @@
+
+<div class="row">
+	<div class="large-12 medium-12 small-12 columns opportunity-header">
+		<h1>Opportunities</h1>
+		
+		<li class="pull-left"><a href="/newOpportunity" class="filter-btn">Add New Opportunity</a></li>
+
+		<li class="pull-right"><a class="filter-btn" ng-click="myFilter = {type: 'Buyer'}; activeMenu = 'Buyer'"><span ng-class="{active : activeMenu === 'Buyer'}">Buyers</span></a></li>
+
+		<li class="pull-right"><a class="filter-btn" ng-click="myFilter = {type: 'Seller'}; activeMenu = 'Seller'"><span ng-class="{active : activeMenu === 'Seller'}">Sellers</span></a></li>
+
+		<li class="pull-right"><a class="filter-btn" ng-click="viewAllOpps()"}><span ng-class="{active : activeMenu === 'View All'}">View All</span></a></li>
+
+	</div>
+
+</div>
+
+
+<div class="row">
+	<div class="large-12 medium-10 columns">
+	
+		<table class="data-table">
+		  <thead>
+		    <tr>
+		    	<th>Manufacturer</th>
+		      <th>Model</th>
+		      <th>Storage</th>
+		      <th>Condition</th>
+		      <th>Carrier</th>
+		      <th>Color</th>
+		      <th>Country</th>
+		      <th>Quantity</th>
+		      <th>Price</th>
+		      <th>Sales Rep</th>
+		      <th>Type</th>
+		      <th>Date</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr ng-repeat="phone in opportunity | filter:myFilter | orderBy: 'created_at':true">
+		    	<td>{{phone.manufacturer}}</td>
+		      <td>{{phone.model}}</td>
+		      <td>{{phone.storage}}</td>
+		      <td>{{phone.condition}}</td>
+		      <td>{{phone.carrier}}</td>
+		      <td>{{phone.color}}</td>
+		      <td>{{phone.country}}</td>
+		      <td>{{phone.quantity}}</td>
+		      <td>{{phone.price}}</td>
+		      <td>{{phone.salesRep}}</td>
+		      <td>{{phone.type}}</td>
+		      <td>{{phone.created_at | date: "mediumDate"}}</td>
+		    </tr>
+		   </tbody>
+		</table>
+
+
+	</div>
+
+</div>

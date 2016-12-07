@@ -1,0 +1,93 @@
+<!-- <div class="row">
+	<div class="large-10 medium-10 columns large-offset-1 medium-offset-1 opportunity-header">
+		<h5>Add New Opportunity</h5>
+	</div>
+</div>
+ -->
+
+<div class="row">
+	<div class="large-12 medium-12 large-offset-1 medium-offset-1 columns opportunity-header">
+		<form action="post" id="opp-form">
+		
+      <div class="row">
+        <div class="medium-12 columns">
+          <label>Manufacturer</label>
+          <input type="text" placeholder="Ex. Apple, Samsung" class="opp-input" ng-model="opportunity.manufacturer">
+          
+        </div>
+      </div>
+
+			<div class="row">
+    			<div class="medium-6 small-6 columns">
+					<label>Model</label>
+					<input type="text" placeholder="Ex. 6s Plus" class="opp-input" ng-model="opportunity.model">
+					
+    		</div>
+    			<div class="medium-6 small-6 columns">
+      			<label>Storage</label>
+        			<input type="text" placeholder="Ex. 64GB" class="opp-input" ng-model="opportunity.storage">
+      			
+    			</div>
+  			</div>
+  			
+  			<div class="row">
+    			<div class="medium-6 small-6 columns">
+					<label>Condition</label>
+					<input type="text" placeholder="Ex. New" class="opp-input" ng-model="opportunity.condition">
+					
+    		</div>
+    			<div class="medium-6 small-6 columns">
+      			<label>Carrier</label>
+        			<input type="text" placeholder="Ex. Unlocked" class="opp-input" ng-model="opportunity.carrier">
+      			
+    			</div>
+  			</div>
+  			
+  			<div class="row">
+    			<div class="medium-6 small-6 columns">
+					<label>Color</label>
+					<input type="text" placeholder="Ex. New, Like New, Good, etc." class="opp-input" ng-model="opportunity.color">
+    		</div>
+    			<div class="medium-6 small-6 columns">
+      			<label>Country of Origin</label>
+        			<input type="text" placeholder="Ex. Unlocked, AT&T, Verizon, etc." class="opp-input" ng-model="opportunity.country">
+    			</div>
+  			</div>
+  			
+  			<div class="row">
+    			<div class="medium-6 small-6 columns">
+					<label>Quantity
+					<input type="number" placeholder="Ex. New, Like New, Good, etc." class="opp-input" ng-model="opportunity.quantity">
+    		</div>
+    			<div class="medium-6 small-6 columns">
+      			<label>Price (<i class="fa fa-usd"></i>)</label>
+        			<input type="number" placeholder="Ex. Unlocked, AT&T, Verizon, etc." class="opp-input" ng-model="opportunity.price">
+    			</div>
+  			</div>
+  			
+  			<div class="row">
+    			<div class="medium-6 small-6 columns">
+					<label>Sales Rep {{ salesRep }}</label>
+						<select class="opp-input" ng-model="salesRep">
+            <option value="">Select Sales Rep</option>
+						 <option ng-model="salesRep" ng-repeat="salesRep in opportunity.salesRep" value="{{salesRep}}">{{salesRep}}</option>
+						</select>
+    			</div>
+    			<div class="medium-6 small-6 columns">
+      			<label>Type {{ bs }}</label>
+        			<select class="opp-input" ng-model="bs">
+                <option value="">Select Opportunity Type</option>
+                <option ng-model="bs" ng-repeat="type in opportunity.type track by $index" value="{{type}}">{{type}}</option>
+              </select>
+    			</div>
+  			</div>
+  			
+  			<div class="row">
+  				<div class="large-12 medium-12 columns">
+					<a href="#" class="large button expanded opp-button" ng-click="createOpportunity()">Create Opportunity</a>
+  				</div>
+  			</div>
+  			
+		</form>
+	</div>
+</div>
