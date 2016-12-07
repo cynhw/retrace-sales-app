@@ -1,4 +1,4 @@
-# retrace-sales-app
+# Retrace Sales App
 Building a simple CRM that tracks opportunities and deals and matching potential buyers and sellers
 
 ## Prereqs
