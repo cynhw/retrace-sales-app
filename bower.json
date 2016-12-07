@@ -1,0 +1,28 @@
+{
+  "name": "retrace-sales-app",
+  "description": "sales app",
+  "main": "index.js",
+  "authors": [
+    "cynhw <cynhowong@gmail.com>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "app",
+    "sales"
+  ],
+  "homepage": "https://github.com/cynhw/retrace-sales-app",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "font-awesome": "fontawesome#^4.7.0"
+  },
+  "dependencies": {
+    "angular-toArrayFilter": "^1.0.1"
+  }
+}
