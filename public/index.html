@@ -7,16 +7,18 @@
 	<meta charset="UTF-8">
 	<title>Retrace Sales App</title>
 
-	<link rel="stylesheet" href="app/assets/components/foundation-sites/dist/foundation.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="app/assets/components/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="app/assets/styles/styles.css">
 
   <script src="app/assets/components/angular/angular.min.js"></script>
   <script src="app/assets/components/angular-route/angular-route.min.js"></script>
   <script src="app/assets/components/angular-resource/angular-resource.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-foundation-6/0.10.15/angular-foundation.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.6/angular-filter.js"></script>
+  <script src="app/assets/components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
   <script src="app/assets/components/angular-toArrayFilter/toArrayFilter.js"></script>
   <script src="app/assets/components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
   
   <script src="app/controllers.js"></script>
   <script src="app/services/opps.js"></script>
@@ -27,9 +29,9 @@
 <body>
 
   <div ng-include="'app/views/navbar.html'"></div>
-  <div class="container">
+  
   	<ng-view autoscroll="true"></ng-view>
-  </div>
+    
 
 <script src="app/assets/scripts/script.js"></script>
 

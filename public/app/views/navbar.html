@@ -1,16 +1,34 @@
-<div class="nav top-bar">
-  <div class="top-bar-left">
-    <ul class="dropdown menu" data-dropdown-menu>
-      <li class="menu-text">Retrace Sales Management</li>
-      <li>
-        <a>Opportunities</a>
-        <ul class="menu vertical">
-          <li><a href="/newOpportunity">Add New Opportunity</a></li>
-          <li><a href="/opportunities">View All Opportunities</a></li>
-        </ul>
-      </li>
-      <li><a href="/matches">Matches</a></li>
-      <li><a href="#">Contacts</a></li>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- <div class="navbar-header">
+      <a class="navbar-brand" href="#">Retrace Sales Management</a>
+    </div> -->
+  
+    <ul uib-dropdown on-toggle="toggled(open)" class="nav navbar-nav">
+<!--       <li><a><span onclick="openNav()"><i class="fa fa-bars"></i></span></a></li> -->
+      <li><a id="simple-dropdown" class="btn" uib-dropdown-toggle>
+        Opportunities
+      </a></li>
+      <li><a href="/matches" class="btn">
+        Matches
+      </a></li>
+      <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+        <li>
+          <a href="/newOpportunity">Add New Opportunity</a>
+          <a href="/opportunities">View All Opportunities</a>
+        </li>
+      </ul>
     </ul>
+
+    <!-- <ul uib-dropdown on-toggle="toggled(open)" class="nav navbar-nav">
+      <li><a href id="simple-dropdown" class="btn" uib-dropdown-toggle>
+        Click me for a dropdown, yo!
+      </a></li>
+      <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+        <li>
+          <a href="#">Add New Opportunity</a>
+        </li>
+      </ul>
+    </ul> -->
   </div>
-</div>
+</nav>

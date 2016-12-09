@@ -10,76 +10,109 @@ html {
 /* Universal Body Styling */
 
 body {
-	font-family: 'Lato';
-	font-size: 14px;
+	font-family: 'Avenir Next';
+	font-weight: 500;
 }
 
 a:link, a:visited {
 	color: black;
 }
 
-h1, h2, h3, h4, h5, h6 {
+/*h1, h2, h3, h4, h5, h6 {
 	font-family: 'Avenir Next';
 	letter-spacing: -1px;
 	line-height: 2em;
 	font-weight: 500;
-}
+}*/
 
 li {
 	list-style-type: none;
 	display: inline-block;
-	margin: 10px;
 }
 
-table, thead, tr, th {
-	background-color: transparent;
-}
+/* Search Content */
 
-/* Nav List Link Styles */
-
-.nav li, .menu-text{
-	font-size: 14px;
-}
-
-.dropdown {
-	background-color: transparent;
+.search {
+	height: 150px;
 }
 
 /* Form Styling */
 
+#search-bar {
+	border: 0px;
+	width: 100%;
+	border-bottom: 3px solid yellow;
+	background-color: transparent;
+	height: 80px;
+	font-size: 2.5em;
+	font-weight: 400;
+/*	font-family: 'Adriane Text';*/
+	letter-spacing: -1px;
+	margin: 20px 0;
+}
+
+#search-bar:focus {
+	border-bottom: 3px solid deepskyblue;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 label {
-	text-transform: uppercase;
-	font-weight: 500;
-	letter-spacing: 1px;
+	letter-spacing: 0px;
 	line-height: 30px;
 }
 
-#opp-form h5 {
+#opp-form label {
 	color: deepskyblue;
+	margin: 10px 0;
 }
 
 .opp-input {
-	border-radius: 5px;
+	height: 40px;
+	font-size: 1em;
+	font-weight: 400;
+	color:  #000000;
+	border: 1px solid grey;
+	background-color: transparent;
 }
 
 .opp-button, .opp-button:hover {
-	border-radius: 5px;
+	width: 50%;
+	color:  #00b35a;
+	border-color:  #00b35a;
+	height: 50px;
+	font-size: 1.2em;
+	font-weight: 100;
+	border-radius: 50px;
+	text-transform: uppercase;
 	background-color: transparent;
-	border: 1px solid lightgrey;
-	margin: 20px 0;
-	color: deepskyblue;
 }
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
 
 /* Styling for Opportunity */
 
-.opportunity-header {
-	margin: 30px 0;
-}
-
 .active {
-	border-bottom: 2px solid #000;
 	color: deepskyblue;
-	font-weight: 900;
+	font-weight: 500;
 }
 
 .filter-btn, .filter-btn:hover {
@@ -90,15 +123,7 @@ label {
 	letter-spacing: 1px;
 	font-weight: 500;
 	font-size: 10px;
-}
-
-.filter-btn:hover {
-	color: orange;
-}
-
-.menu a {
-	font-size: 5px;
-	font-weight: 500;
+	text-decoration: none;
 }
 
 /* Matches Content */
@@ -126,3 +151,6 @@ label {
 	border-radius: 5px;
 	color: #FFF;
 }
+
+/* */
+

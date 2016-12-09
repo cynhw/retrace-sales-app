@@ -2,11 +2,15 @@ angular.module('OppCtrls', ['oppService', 'angular-toArrayFilter'])
 
 .controller('HomeCtrl', ['$scope', '$routeParams', '$route', 'Opportunities', function($scope, $routeParams, $route, Opportunities) {
 
-		$scope.opportunity = {};
+		$scope.opportunity = [];
 		$scope.activeMenu= "View All";
 
 		Opportunities.query({id : $routeParams.id}, function success(data) {
 			$scope.opportunity = data;
+
+		$scope.q = [];
+		$scope.queryBy = '$';
+
 		}, function error(data) {
 			console.log(data);
 		});
@@ -18,11 +22,36 @@ angular.module('OppCtrls', ['oppService', 'angular-toArrayFilter'])
 
 	}])
 
-.controller('MatchCtrl', ['$scope', 'Opportunities', '$routeParams', '$http', function($scope, Opportunities, $routeParams, $http){
+.filter('searchFilter', function($filter) {
+
+    return function(inputArray, searchText, booleanOp) {
+        booleanOp = booleanOp || 'AND';
+
+        var searchTerms = (searchText || '').toLowerCase().split(/\s+/);
+
+        if (booleanOp === 'AND') {
+            var result = inputArray;
+            searchTerms.forEach(function(searchTerm) {
+                result = $filter('filter')(result, searchTerm);
+            });
+
+        } else {
+            var result = [];
+            searchTerms.forEach(function(searchTerm) {
+                result = result.concat($filter('filter')(inputArray, searchTerm));
+            });
+        }
+
+        return result;
+    };
+})
+
+.controller('MatchCtrl', ['$scope', 'Opportunities', '$routeParams', '$http', '$filter', function($scope, Opportunities, $routeParams, $http, $filter){
 
 		Opportunities.query({id : $routeParams.id}, function success(data) {
 			$scope.matches = data;
 			$scope.matched = [];
+			$scope.matched2 = [];
 
 			$scope.buyerHeader = 'Buyer';
 			$scope.sellerHeader = 'Seller';
@@ -41,25 +70,38 @@ angular.module('OppCtrls', ['oppService', 'angular-toArrayFilter'])
 			})
 			var sellers = $scope.sellers;
 			
-			buyers.forEach(function(buyer) {
-				sellers.forEach(function(seller) {
-					if (buyer.condition === seller.condition && buyer.price === seller.price) {
+			sellers.forEach(function(seller) {
+				buyers.forEach(function(buyer) {
+					if (buyer.model === seller.model) {
 						$scope.matchedSeller = seller;
 						$scope.matchedBuyer = buyer;
-						// console.log($scope.matchedSeller);
-						$scope.matched.push(seller);
+
+						$scope.matched2.push(seller);
 						$scope.matched.push(buyer);
 						
 					}
 				});
 			});
 
-			console.log($scope.matchedBuyer);
+			console.log($scope.matched);
+			console.log($scope.matched2);
 
 		}, function error(data) {
 			console.log(data);
 		});
 
+}])
+
+.controller('NavCtrl', ['$scope', '$route', '$location', function($scope, $route, $location){
+			$scope.toggled = function(open) {
+    	$log.log('Dropdown is now: ', open);
+  		};
+
+  		$scope.toggleDropdown = function($event) {
+    		$event.preventDefault();
+    		$event.stopPropagation();
+    		$scope.status.isopen = !$scope.status.isopen;
+  		};
 }])
 
 .controller('NewCtrl', ['$scope', '$location', '$route', 'Opportunities', function($scope, $location, $route, Opportunities) {
@@ -81,11 +123,11 @@ angular.module('OppCtrls', ['oppService', 'angular-toArrayFilter'])
 			$scope.opportunity.salesRep = $scope.salesRep;
 			$scope.opportunity.type = $scope.bs;
 
-			// Opportunities.save($scope.opportunity, function success(data) {
-			// 	$location.path('/opportunities');
-			// }, function error(data) {
-			// 	console.log(data);
-			// });
+			Opportunities.save($scope.opportunity, function success(data) {
+				$location.path('/opportunities');
+			}, function error(data) {
+				console.log(data);
+			});
 
 			$route.reload();
 			

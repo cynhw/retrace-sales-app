@@ -1,4 +1,4 @@
-var app = angular.module('RetraceSalesApp', ['ngRoute', 'mm.foundation', 'OppCtrls', 'oppService', 'ui.router']);
+var app = angular.module('RetraceSalesApp', ['ngRoute', 'ui.bootstrap', 'OppCtrls', 'oppService', 'ui.router', 'angular.filter']);
 
 	app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 
@@ -18,6 +18,10 @@ var app = angular.module('RetraceSalesApp', ['ngRoute', 'mm.foundation', 'OppCtr
 		.when('/matches', {
 			templateUrl: 'app/views/matches.html',
 			controller: 'MatchCtrl'
+		})
+		.when('/navbar', {
+			templateUrl: 'app/view/navbar.html',
+			controller: 'NavCtrl'
 		})
 		;
 
