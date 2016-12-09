@@ -11,7 +11,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(morgan('dev'));
 
 var mongoose = require('mongoose');
-var Opportunities = require('./models/opportunities');
 mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/retrace-sales');
 
 app.use('/api/opportunities', require('./controllers/opportunities'));
